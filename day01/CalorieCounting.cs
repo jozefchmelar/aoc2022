@@ -3,7 +3,6 @@ namespace Aoc
     public class CalorieCounting : BaseAoc
     {
         public override string InputFile => @"day01\CalorieCounting.txt";
-
         public override object PartOne() => File
             .ReadAllText(InputFileFullPath)
             .Split("\n\n")

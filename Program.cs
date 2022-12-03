@@ -8,7 +8,7 @@ public class Program
         .Where(x => x.IsSubclassOf(typeof(BaseAoc)))
         .Select(Activator.CreateInstance)
         .Cast<BaseAoc>()
-        .Select(x => x.Solutions())
+        .Select(BaseAoc.Solutions)
         .Join("\n")
         .Let(System.Console.WriteLine);
 }

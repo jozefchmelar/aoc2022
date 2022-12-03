@@ -9,7 +9,7 @@ namespace Aoc
         public abstract string InputFile { get; }
         public string InputFileFullPath
             => Path.Join(Environment.CurrentDirectory, InputFile);
-        public string Solutions() => $"{this.GetType().Name}: {PartOne()}, {PartTwo()}";
+        public static string Solutions(BaseAoc aoc) => $"{aoc.GetType().Name}: {aoc.PartOne()}, {aoc.PartTwo()}";
 
     }
 }

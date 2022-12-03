@@ -4,11 +4,11 @@ namespace Aoc
 {
     public class RockPaperScissors : BaseAoc
     {
-        enum Hand { Rock, Paper, Scissors }
         class Game
         {
-            Hand PlayerOne { get; }
-            Hand PlayerTwo { get; }
+            enum Hand { Rock, Paper, Scissors }
+            Hand PlayerOne;
+            Hand PlayerTwo;
             public Game(string gamePlayed)
             {
                 var hands = gamePlayed.Trim().Split(" ").Select(FromInput);
@@ -31,7 +31,6 @@ namespace Aoc
                 };
             }
 
-            //Rock defeats Scissors, Scissors defeats Paper, and Paper defeats Rock.
             public int MyScore() => (PlayerOne, PlayerTwo) switch
             {
                 (Hand.Rock, Hand.Rock) => 3 + 1,
@@ -55,6 +54,7 @@ namespace Aoc
             };
 
         }
+
         public override string InputFile => @"day02\day02input.txt";
 
         public override string PartOne() => File
@@ -63,7 +63,6 @@ namespace Aoc
             .Select(x => x.MyScore())
             .Sum()
             .ToString();
-
 
         public override object PartTwo() => File
             .ReadAllLines(InputFileFullPath)
