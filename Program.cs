@@ -5,10 +5,11 @@ public class Program
         .CurrentDomain
         .GetAssemblies()
         .SelectMany(assembly => assembly.GetTypes())
-        .Where(x => x.IsSubclassOf(typeof(BaseAoc)))
+        .Where(x => x.IsSubclassOf(typeof(AoC)))
+        .OrderBy(x => x.Name)
         .Select(Activator.CreateInstance)
-        .Cast<BaseAoc>()
-        .Select(BaseAoc.Solutions)
+        .Cast<AoC>()
+        .Select(AoC.Solutions)
         .Join("\n")
         .Let(System.Console.WriteLine);
 }

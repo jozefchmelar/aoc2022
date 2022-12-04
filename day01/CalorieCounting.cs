@@ -1,6 +1,6 @@
 namespace Aoc
 {
-    public class CalorieCounting : BaseAoc
+    public class Day01_CalorieCounting : AoC
     {
         public override string InputFile => @"day01\CalorieCounting.txt";
         public override object PartOne() => File
@@ -17,6 +17,5 @@ namespace Aoc
             .OrderDescending()
             .Take(3)
             .Sum();
-
     }
 }

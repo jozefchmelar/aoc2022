@@ -1,6 +1,6 @@
 namespace Aoc
 {
-    public class Rucksack : BaseAoc
+    public class Day03_Rucksack : AoC
     {
         public override string InputFile => @"day03\rucksackInput.txt";
 

@@ -1,8 +1,6 @@
-using System.Diagnostics;
-
 namespace Aoc
 {
-    public class RockPaperScissors : BaseAoc
+    public class Day02_RockPaperScissors : AoC
     {
         class Game
         {
