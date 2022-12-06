@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using Aoc;
 
 public class Day05_Cranes : AoC
@@ -62,7 +63,8 @@ public class Day05_Cranes : AoC
 
     private IEnumerable<Command> ParseCommands(string[] input) => input
         .SkipWhile(x => !x.StartsWith("move"))
-        .Select(x => x.Replace("move ", "").Replace("from ", "").Replace("to ", "").Split(" ").Select(int.Parse).ToArray())
+        .Select(x => Regex.Match(x, @"move (.*) from (.*) to (.*)"))
+        .Select(x => x.Groups.Values.Skip(1).Select(x => x.Value).Select(Int32.Parse).ToArray())
         .Select(x => new Command(HowMany: x[0], From: x[1], To: x[2]));
 
 }
