@@ -25,7 +25,6 @@ public static class Extensions
         Enumerable.Range(0, ienu).ForEach(x => action());
     }
 
-
-
     public static void Let<T>(this T @object, Action<T> a) => a(@object);
+    
 }

@@ -25,7 +25,8 @@ namespace Aoc
                     ("X", Hand.Scissors) => Hand.Paper,
                     ("Z", Hand.Rock) => Hand.Paper,
                     ("Z", Hand.Paper) => Hand.Scissors,
-                    ("Z", Hand.Scissors) => Hand.Rock
+                    ("Z", Hand.Scissors) => Hand.Rock,
+                    _ => throw new Exception()
                 };
             }
 
@@ -42,6 +43,7 @@ namespace Aoc
                 (Hand.Scissors, Hand.Rock) => 6 + 1,
                 (Hand.Scissors, Hand.Paper) => 0 + 2,
                 (Hand.Scissors, Hand.Scissors) => 3 + 3,
+                _ => throw new Exception()
             };
             private Hand FromInput(string s) => s switch
             {

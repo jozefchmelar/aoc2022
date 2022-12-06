@@ -6,16 +6,16 @@ namespace Aoc
         public override object PartOne() => File
             .ReadAllText(InputFileFullPath, System.Text.Encoding.UTF8)
             .ReplaceLineEndings()
-            .Split("\n\n")
-            .Select(x => x.Split("\n").Select(long.Parse).Sum())
+            .Split(Environment.NewLine+Environment.NewLine)
+            .Select(x => x.Split(Environment.NewLine).Select(long.Parse).Sum())
             .OrderDescending()
             .First();
 
         public override object PartTwo() => File
             .ReadAllText(InputFileFullPath)
             .ReplaceLineEndings()
-            .Split("\n\n")
-            .Select(x => x.Split("\n").Select(long.Parse).Sum())
+            .Split(Environment.NewLine+Environment.NewLine)
+            .Select(x => x.Split(Environment.NewLine).Select(long.Parse).Sum())
             .OrderDescending()
             .Take(3)
             .Sum();
